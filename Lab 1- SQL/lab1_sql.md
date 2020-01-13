@@ -11,7 +11,7 @@ We have assumed you have successfully install Vertica Community Edition on your 
 ## Setting up the database schema
 
 **Getting the schema**:  We've defined the TPC-H database schema for you, which you should. The schema represents a repositories of orders for speicifc parts. It recordes the customers placing the orders along with their info (nation and region) as well as the suppliers that provided the parts of a given orders (along with information for each supplies such as the its nation). This is a data analytics star-based schema with the lineitem table being the fact table that captures the relationship between orders, parts and suppliers. It also stores information about the supplies of these lineitems.
-To get the schema, go to: [http://rm.cab/sql](https://github.com/COSI132a/Spring2020/blob/master/Lab%201-%20SQL/sample-data-tpch-schema.png). 
+To get the schema, go [here](https://github.com/COSI132a/Spring2020/blob/master/Lab%201-%20SQL/sample-data-tpch-schema.png). 
 
 The schema represents a simple university. Each entity (student, professor, course, enrollment, teaching assignment) is represented by a relation (sometimes called a "table"), and most entities have an ID (for example, student's have a student ID field, `sid`).
 
