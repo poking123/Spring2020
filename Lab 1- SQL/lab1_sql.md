@@ -1,15 +1,17 @@
-# COSI 132 Lab 1: Joins
+# COSI 132 Lab 1: SQL
 
 Due date: TBD
     
 ## Introduction
-In this lab, you'll get experience using SQL to perform basic join operations on a small dataset. This lab will show you how a relational data model, combined with a powerful query processing language, can greatly simplify finding answers to complex questions.
+In this lab, you'll get experience using SQL to perform basic join operations on a small dataset of the TPC-H benchmark. This lab will show you how a relational data model, combined with a powerful query processing language, can greatly simplify finding answers to complex questions.
 
-## Instructions
+## Installing Vertica Engine 
+We have assumed you have successfully install Vertica Community Edition on your persomal machine. If you are have any issues with please visit the instructions we posted on LATTE on how to set up Vertica. 
 
-**Getting the schema**: the left hand side of the DB Fiddle site is used to store the schema and data of your database. We've defined a database schema for you, which you should copy/paste into this section. To get the schema, go to: [http://rm.cab/sql](http://rm.cab/sql). Afterwards, your session should look like this:
+## Setting up the database schema
 
-![Screenshot](http://cs.brandeis.edu/~rcmarcus/cs132/lab1/shot1.png)
+**Getting the schema**:  We've defined the TPC-H database schema for you, which you should. The schema represents a repositories of orders for speicifc parts. It recordes the customers placing the orders along with their info (nation and region) as well as the suppliers that provided the parts of a given orders (along with information for each supplies such as the its nation). This is a data analytics star-based schema with the lineitem table being the fact table that captures the relationship between orders, parts and suppliers. It also stores information about the supplies of these lineitems.
+To get the schema, go to: [http://rm.cab/sql](http://rm.cab/sql). 
 
 The schema represents a simple university. Each entity (student, professor, course, enrollment, teaching assignment) is represented by a relation (sometimes called a "table"), and most entities have an ID (for example, student's have a student ID field, `sid`).
 
