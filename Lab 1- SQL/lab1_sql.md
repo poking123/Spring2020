@@ -10,10 +10,10 @@ We have assumed you have successfully install Vertica Community Edition on your 
 
 ## Setting up the database schema
 
-**Getting the schema**:  We've defined the TPC-H database schema for you, which you should. The schema represents a repositories of orders for speicifc parts. It recordes the customers placing the orders along with their info (nation and region) as well as the suppliers that provided the parts of a given orders (along with information for each supplies such as the its nation). This is a data analytics star-based schema with the lineitem table being the fact table that captures the relationship between orders, parts and suppliers. It also stores information about the supplies of these lineitems.
+**Getting the schema**:  We've defined the TPC-H database schema for you, which you should setup on your local vertica engine. The schema represents a repositories of orders for speicifc parts provider by suppliers. It recordes the information about customers placing the orders (customer table), suppliers that provided the parts (table supplier) and demographis for them (nation and region tables). The part table provides info for the parts and the orders table info for orders (customer, time, etc).  This is a data analytics star-based schema with the lineitem table being the fact table that captures the relationship between orders, parts and suppliers. 
 To get the schema, go [here](https://github.com/COSI132a/Spring2020/blob/master/Lab%201-%20SQL/sample-data-tpch-schema.png). 
 
-The schema represents a simple university. Each entity (student, professor, course, enrollment, teaching assignment) is represented by a relation (sometimes called a "table"), and most entities have an ID (for example, student's have a student ID field, `sid`).
+You can get the sql statement that generate the schema here [Schema SQL](https://github.com/COSI132a/Spring2020/blob/master/Lab%201-%20SQL/tpch.sql)
 
 **Writing your first query**: to get started, let's run a basic SQL query to list all the students in our university. On the right hand side of DB Fiddle, in the section labeled "Query SQL", enter the following:
 
