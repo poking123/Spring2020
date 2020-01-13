@@ -13,7 +13,9 @@ We have assumed you have successfully install Vertica Community Edition on your 
 **Getting the schema**:  We've defined the TPC-H database schema for you, which you should setup on your local vertica engine. The schema represents a repositories of orders for speicifc parts provider by suppliers. It recordes the information about customers placing the orders (customer table), suppliers that provided the parts (table supplier) and demographis for them (nation and region tables). The part table provides info for the parts and the orders table info for orders (customer, time, etc).  This is a data analytics star-based schema with the lineitem table being the fact table that captures the relationship between orders, parts and suppliers. 
 To get the schema, go [here](https://github.com/COSI132a/Spring2020/blob/master/Lab%201-%20SQL/sample-data-tpch-schema.png). 
 
-You can get the sql statement that generate the schema here [Schema SQL](https://github.com/COSI132a/Spring2020/blob/master/Lab%201-%20SQL/tpch.sql)
+You can get the sql statement that generates the schema here [Schema SQL](https://github.com/COSI132a/Spring2020/blob/master/Lab%201-%20SQL/tpch.sql)
+
+## Populating your database with data
 
 **Writing your first query**: to get started, let's run a basic SQL query to list all the students in our university. On the right hand side of DB Fiddle, in the section labeled "Query SQL", enter the following:
 
