@@ -18,7 +18,7 @@ To see a presentation of the relational schema, go [here](https://github.com/COS
 
 ## Your assingment
 
-**Writing your first query**:To get started, let's run a basic SQL query to list all the customers. Since you are working with a large dataset, your queries will return 1000s of rows which slow down things on your machine - to avoid this  ALWAYS include a LIMIT clause at the end of your query. The LIMIT clause indicates the upper limit of rows you want your query to return. Your first query statement should be the following:
+**Writing your first query**: To get started, let's run a basic SQL query to list all the customers. Since you are working with a large dataset, your queries will return 1000s of rows which might slow down on your machine - to avoid this  ALWAYS include a LIMIT clause at the end of your query. The LIMIT clause indicates the upper limit of rows you want your query to return. Your first query statement should be the following:
 
 ```sql
 SELECT * FROM customer LIMIT 10;
@@ -26,18 +26,18 @@ SELECT * FROM customer LIMIT 10;
 
 ... and then press the enter button. The results should appear, and give you a table showing the result of your query -- in this case, listing up to 10 cutomers fron the `customer` relation.
 
-To get only customers who are from China (indicated by the value 18 in the attribute Nationkey), we can add a `WHERE` clause to our query:
+To get only customers who are from China (indicated by the value 18 in the attribute nationkey), we can add a `WHERE` clause to our query:
 
 ```sql
 SELECT * FROM customer WHERE c_nationkey = 18 LIMIT 10;
 ```
 
-**Writing your first (few) `JOIN` query**: Let's expand our listing of customers who are from China(nationkey = 18). In order to do this, we want to join together the `customer` relation with the `order` relation, matching on the `custkey` attributes (sometimes called "columns") of both relations. To do this, enter the following SQL query:
+**Writing your first (few) `JOIN` query**: Let's expand our listing of customers who placed some orders and are from China (nationkey = 18). In order to do this, we want to join together the `customer` relation with the `order` relation, matching on the `custkey` attributes (sometimes called "columns") of both relations. To do this, enter the following SQL query:
 
 ```sql
 SELECT * FROM customer, orders WHERE c_nationkey =18 and c_custkey = o_custkey LIMIT 10;
 ```
-**Writing your first (few) `GROUP BY` query**: Let's continue to expand our senario, since each customer may have many orders, in order to see average price of their orders for each customer, it is necessary to apply  group by clause. To do this, enter the following SQL query. 
+**Writing your first (few) `GROUP BY` query**: Let's continue to expand our senario, since each customer may have many orders, in order to see average price of their orders for each customer, it is necessary to apply  GROUP BY clause. To do this, enter the following SQL query. 
 
 ```sql
 SELECT c_custkey, avg(o_totalprice) 
