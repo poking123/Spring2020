@@ -16,15 +16,17 @@ To see a presentation of the relational schema, go [here](https://github.com/COS
 **Loading Data into your DB**: Once you have set up with schema which means every table is created, you need to load **10G** TPC-H data into database. All instructions on loading data are included in our tutorials on LATTE. If you cannot deploy this amount of data please do reach out to us. 
 
 
-**Writing your first query**: to get started, let's run a basic SQL query to list all the customers. **please always write a LIMIT clause at the end of your query since big results may bring troubles to your machine** enter the following:
+##Your assingment##
+
+**Writing your first query**:To get started, let's run a basic SQL query to list all the customers. Since you are working with a large dataset, your queries will return 1000s of rows which slow down things on your machine - to avoid this  ALWAYS include a LIMIT clause at the end of your query. The LIMIT clause indicates the upper limit of rows you want your query to return. Your first query statement should be the following:
 
 ```sql
 SELECT * FROM customer LIMIT 10;
 ```
 
-... and then press the enter button. The results should appear, and give you a table showing the result of your query -- in this case, listing all of the cutomers in the `student` relation.
+... and then press the enter button. The results should appear, and give you a table showing the result of your query -- in this case, listing up to 10 cutomers fron the `customer` relation.
 
-To get only customers who are from China (nationkey is 18), we can add a `WHERE` clause to our query:
+To get only customers who are from China (indicated by the value 18 in the attribute Nationkey), we can add a `WHERE` clause to our query:
 
 ```sql
 SELECT * FROM customer WHERE c_nationkey = 18 LIMIT 10;
