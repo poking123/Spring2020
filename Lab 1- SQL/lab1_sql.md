@@ -16,7 +16,7 @@ To see a presentation of the relational schema, go [here](https://github.com/COS
 **Loading Data into your DB**: Once you have set up with schema which means every table is created, you need to load **10G** TPC-H data into database. All instructions on loading data are included in our tutorials on LATTE. If you cannot deploy this amount of data please do reach out to us. 
 
 
-##Your assingment##
+## Your assingment
 
 **Writing your first query**:To get started, let's run a basic SQL query to list all the customers. Since you are working with a large dataset, your queries will return 1000s of rows which slow down things on your machine - to avoid this  ALWAYS include a LIMIT clause at the end of your query. The LIMIT clause indicates the upper limit of rows you want your query to return. Your first query statement should be the following:
 
