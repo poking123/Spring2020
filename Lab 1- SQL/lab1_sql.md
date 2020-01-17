@@ -18,7 +18,7 @@ To see a presentation of the relational schema, go [here](https://github.com/COS
 
 ## Your assingment
 
-**Writing your first query**: To get started, let's run a basic SQL query to list all the customers. Since you are working with a large dataset, your queries will return 1000s of rows which might slow down on your machine - to avoid this  ALWAYS include a LIMIT clause at the end of your query. The LIMIT clause indicates the upper limit of rows you want your query to return. Your first query statement should be the following:
+**Writing your first selection queries**: To get started, let's run a basic SQL query to list all the customers. Since you are working with a large dataset, your queries will return 1000s of rows which might slow down on your machine - to avoid this  ALWAYS include a LIMIT clause at the end of your query. The LIMIT clause indicates the upper limit of rows you want your query to return. Your first query statement should be the following:
 
 ```sql
 SELECT * FROM customer LIMIT 10;
@@ -26,34 +26,48 @@ SELECT * FROM customer LIMIT 10;
 
 ... and then press the enter button. The results should appear, and give you a table showing the result of your query -- in this case, listing up to 10 cutomers fron the `customer` relation.
 
-To get only customers who are from China (indicated by the value 18 in the attribute nationkey), we can add a `WHERE` clause to our query:
+To get only customers with an account balance greater than ??? , we can add a `WHERE` clause to our query:
 
 ```sql
-SELECT * FROM customer WHERE c_nationkey = 18 LIMIT 10;
+SELECT * FROM customer WHERE accntbal > xxx LIMIT 10;
 ```
 
-**Writing your first (few) `JOIN` query**: Let's expand our listing of customers who placed some orders and are from China (nationkey = 18). In order to do this, we want to join together the `customer` relation with the `order` relation, matching on the `custkey` attributes (sometimes called "columns") of both relations. To do this, enter the following SQL query:
+To get only the name of customers with an account balance greater than ??? , we can add add only the   `name` attribute in the SELECT clause
 
 ```sql
-SELECT * FROM customer, orders WHERE c_nationkey =18 and c_custkey = o_custkey LIMIT 10;
+SELECT name FROM customer WHERE accntbal > xxx LIMIT 10;
 ```
-**Writing your first (few) `GROUP BY` query**: Let's continue to expand our senario, since each customer may have many orders, in order to see average price of their orders for each customer, it is necessary to apply  GROUP BY clause. To do this, enter the following SQL query. 
+
+**Writing your first `JOIN` query**: Let's expand our listing of customers with information about their nation.  In order to do this, we want to join together the `customer` relation with the `nation` relation, matching on the `nationkey` attributes (sometimes called "columns") of both relations. To do this, enter the following SQL query:
+
+```sql
+SELECT * FROM customer, nation WHERE c_nationkey =n_nationkey LIMIT 10;
+```
+
+**Writing your first `ORDER BY` query**: Let's sort the previous results based on the nation name. We need to add a ORDER BY clause in our query. To do this, execute the following SQL query:
+
+```sql
+SELECT * FROM customer, nation WHERE c_nationkey =n_nationkey 
+ORDER BY nation.name LIMIT 10;
+```
+
+**Writing your first `GROUP BY` query**:  Each customer may have many orders and we are interested in the calculating the average price of each customer's  orders per each customer. This is an aggregation query that requires a GROUP BY clause that joins the `orders` and `customer` tables, groups the results by the customerkey and calculates the average price within each group. To do this, enter the following SQL query. 
 
 ```sql
 SELECT c_custkey, avg(o_totalprice) 
 FROM customer, orders 
-WHERE c_nationkey =18 and c_custkey = o_custkey
+WHERE c_custkey = o_custkey
 GROUP BY c_custkey
 LIMIT 10;
 ```
 
 
-**Writing some more queries**: For the rest of this assignment, you should write SQL queries to answer the following questions **Always add LIMIT clause at the end your script**.
+**Writing some more queries**: For the rest of this assignment, you should write SQL queries to answer the following questions. Each question can be answered by a single query **Always add LIMIT clause at the end your script**.
 
-1. Find the addresses of every customer from Argentina. 
-2. Find order status for each customer from China. 
-3. Find the customer from Argentina with largest number of orders.
-4. Find which customer has the highest total value of orders(totalprice).
+1. List the addresses and customer names  of every customer from China.  
+2. List the order status for orders placed by customer from China. The results should be sorted by the orderdate.  
+3. List the  customers from China having more than 10 orders. You will need to use the HAVING clause (see [here](https://www.vertica.com/docs/9.2.x/HTML/Content/Authoring/SQLReferenceManual/Statements/SELECT/HAVINGClause.htm)). 
+4. List the distinct nations of the customers that placed orders with a total price >$1,000. You will need to use the DISTINCT keyword - see [here](https://www.vertica.com/docs/9.2.x/HTML/Content/Authoring/SQLReferenceManual/Statements/SELECT/SELECT.htm?tocpath=SQL%20Reference%20Manual%7CSQL%20Statements%7CSELECT%7C_____0)
 
 
 **Submitting your work**: Once you have finalized your work. Submit following documents in .zip on LATTE:
