@@ -10,10 +10,7 @@ We have assumed you have successfully install Vertica Community Edition with 3 n
 
 ## Setting up the database
 
-**Getting the schema**:  We've defined the TPC-H relational database schema for you, which you should setup on your local Vertica engine. The schema represents a repository of orders of parts provider by suppliers. It recordes the information about customers placing the orders (Customer table), suppliers that provided the parts (table Supplier) and demographis for them (Nation and Region tables). The Part table provides info for the parts and the Orders table info for orders (customer placing the order, order time, etc).  This is a data analytics star-based schema with the Lineitem table being the fact table that captures the relationship between orders, parts and suppliers. This is by far the biggest table in your database. 
-To see a presentation of the relational schema, go [here](https://github.com/COSI132a/Spring2020/blob/master/Lab%201-%20SQL/sample-data-tpch-schema.png). You can get the sql statement that generates the TPC-H schema here [Schema SQL](https://github.com/COSI132a/Spring2020/blob/master/Lab%201-%20SQL/tpch.sql).
-
-**Loading Data into your DB**: Once you have set up with schema which means every table is created, you need to load **10G** TPC-H data into database. All instructions on loading data are included in our tutorials on LATTE. If you cannot deploy this amount of data please do reach out to us. 
+Please note that, you can skip this start and  start your assingment (see below),  if you have set up the TPC database while following the tutorials on setting up Vertica. If you only installed Vertica but have not set up a TPC-H Database you will need to follow the instructions [here](https://docs.google.com/document/d/13J0ONA0yXx_7UrMz9Frn0NpdwoBZHOJvaIZP4T82Ilc/edit?usp=sharing). 
 
 
 ## Your assingment
