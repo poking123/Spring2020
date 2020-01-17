@@ -61,7 +61,7 @@ LIMIT 10;
 
 **Writing some more queries**: For the rest of this assignment, you should write SQL queries to answer the following questions. Each question can be answered by a single query **Always add LIMIT clause at the end your script**.
 
-1. List the addresses and customer names  of every customer from China.  
+1. List the addresses and customer names  of every customer from China(nationkey = 18).  
 2. List the order status for orders placed by customer from China. The results should be sorted by the orderdate.  
 3. List the  customers from China having more than 10 orders. You will need to use the HAVING clause (see [here](https://www.vertica.com/docs/9.2.x/HTML/Content/Authoring/SQLReferenceManual/Statements/SELECT/HAVINGClause.htm)). 
 4. List the distinct nations of the customers that placed orders with a total price >$1,000. You will need to use the DISTINCT keyword - see [here](https://www.vertica.com/docs/9.2.x/HTML/Content/Authoring/SQLReferenceManual/Statements/SELECT/SELECT.htm?tocpath=SQL%20Reference%20Manual%7CSQL%20Statements%7CSELECT%7C_____0)
