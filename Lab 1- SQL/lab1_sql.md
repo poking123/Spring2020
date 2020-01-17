@@ -1,6 +1,6 @@
 # COSI 132- Spring 2020 Lab 1: SQL
 
-Due date: January 24th, 2020 
+Due date: Friday, January 24th, 2020, 11:59pm
     
 ## Introduction
 In this lab, you'll get experience using SQL to perform basic join operations on a small dataset of the TPC-H benchmark. This lab will show you how a relational data model, combined with a powerful query processing language, can greatly simplify finding answers to complex questions.
