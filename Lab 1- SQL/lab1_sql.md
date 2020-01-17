@@ -13,7 +13,7 @@ We have assumed you have successfully install Vertica Community Edition with 3 n
 Please note that, you can skip this start and  start your assingment (see below),  if you have set up the TPC database while following the tutorials on setting up Vertica. If you only installed Vertica but have not set up a TPC-H Database you will need to follow the instructions [here](https://docs.google.com/document/d/13J0ONA0yXx_7UrMz9Frn0NpdwoBZHOJvaIZP4T82Ilc/edit?usp=sharing). 
 
 
-## Your assingment
+## Your assignment
 
 **Writing your first selection queries**: To get started, let's run a basic SQL query to list all the customers. Since you are working with a large dataset, your queries will return 1000s of rows which might slow down on your machine - to avoid this  ALWAYS include a LIMIT clause at the end of your query. The LIMIT clause indicates the upper limit of rows you want your query to return. Your first query statement should be the following:
 
