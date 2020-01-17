@@ -26,16 +26,16 @@ SELECT * FROM customer LIMIT 10;
 
 ... and then press the enter button. The results should appear, and give you a table showing the result of your query -- in this case, listing up to 10 cutomers fron the `customer` relation.
 
-To get only customers with an account balance greater than ??? , we can add a `WHERE` clause to our query:
+To get only customers with an account balance greater than 6000 , we can add a `WHERE` clause to our query:
 
 ```sql
-SELECT * FROM customer WHERE accntbal > xxx LIMIT 10;
+SELECT * FROM customer WHERE c_acctbal > 6000 LIMIT 10;
 ```
 
-To get only the name of customers with an account balance greater than ??? , we can add add only the   `name` attribute in the SELECT clause
+To get only the name of customers with an account balance greater than 6000 , we can add add only the   `name` attribute in the SELECT clause
 
 ```sql
-SELECT name FROM customer WHERE accntbal > xxx LIMIT 10;
+SELECT name FROM customer WHERE c_acctbal > 6000 LIMIT 10;
 ```
 
 **Writing your first `JOIN` query**: Let's expand our listing of customers with information about their nation.  In order to do this, we want to join together the `customer` relation with the `nation` relation, matching on the `nationkey` attributes (sometimes called "columns") of both relations. To do this, enter the following SQL query:
@@ -48,7 +48,7 @@ SELECT * FROM customer, nation WHERE c_nationkey =n_nationkey LIMIT 10;
 
 ```sql
 SELECT * FROM customer, nation WHERE c_nationkey =n_nationkey 
-ORDER BY nation.name LIMIT 10;
+ORDER BY n_name LIMIT 10;
 ```
 
 **Writing your first `GROUP BY` query**:  Each customer may have many orders and we are interested in the calculating the average price of each customer's  orders per each customer. This is an aggregation query that requires a GROUP BY clause that joins the `orders` and `customer` tables, groups the results by the customerkey and calculates the average price within each group. To do this, enter the following SQL query. 
